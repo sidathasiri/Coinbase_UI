@@ -19,7 +19,7 @@ export default class PayBtn extends Component {
     let currType = this.props.type.toLowerCase();
     let address = `https://chart.googleapis.com/chart?chs=225x225&cht=qr&chl=${currType}:${
       this.props.address
-    }`;
+    }?amount=${this.props.amount}`;
 
     if (
       currType === "USD Coin".toLocaleLowerCase() ||
@@ -27,7 +27,7 @@ export default class PayBtn extends Component {
     ) {
       address = `https://chart.googleapis.com/chart?chs=225x225&cht=qr&chl=${
         this.props.address
-      }`;
+      }?amount=${this.props.amount}`;
     }
     const bitCoinPayDiv = (
       <div style={{ marginTop: "5px" }}>
